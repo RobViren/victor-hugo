@@ -12,9 +12,14 @@ collections:
     label: "Product"
     folder: "site/content/product"
     create: true
-
+    sort: "productfamily:desc"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Hero", name: "hero", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Product Family",name: "productfamily", widget: "string"}
+      - label: "Attachments"
+        name: "attachments"
+        widget: list
+        fields:
+          - {label: "Attachments", name: "attachments", widget: file, required: false}
