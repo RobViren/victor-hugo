@@ -1,0 +1,13 @@
+{{ partial "header" . }}
+
+<h1>Hugo with Gulp, PostCSS and Webpack</h1>
+<ul>
+<!-- Ranges through content/post/*.md -->
+{{ range .Data.Pages }}
+    <li>
+        <a href="{{.Permalink}}">{{.Title}}</a>
+    </li>
+{{ end }}
+</ul>
+
+{{ partial "footer" . }}
