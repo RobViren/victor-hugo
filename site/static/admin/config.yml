@@ -3,14 +3,14 @@ backend:
   repo: RobViren/victor-hugo
   branch: master
 
-public_folder: "site/static"
-media_folder: "site/content/assets"
+public_folder: "./site/static"
+media_folder: "./site/content/assets"
 
 
 collections:
   - name: "post"
     label: "Post"
-    folder: "site/content/posts"
+    folder: "./site/content/posts"
     create: true
     sort: "date:desc" # Default is title:asc
     slug: "{{slug}}"
