@@ -8,9 +8,18 @@ media_folder: "site/content/assets"
 
 
 collections:
-  - name: "post"
-    label: "Post"
-    folder: "site/content/posts"
+  - name: "productfamily"
+    label: "Product Family"
+    folder: "site/content/productfamily"
+    create: true
+    fields:
+      - {name: name, label: Name}
+      - {name: twitterHandle, label: "Twitter Handle"}
+      - {name: bio, label: Bio, widget: text}
+
+  - name: "product"
+    label: "Product"
+    folder: "site/content/product"
     create: true
     sort: "date:desc" # Default is title:asc
     slug: "{{slug}}"
@@ -19,5 +28,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Hero", name: "hero", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Layout", name: "layout", widget: "string", default: "Post"}
+      - {label: "Layout", name: "layout", widget: "string", default: "Product"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Product Family",name: productfamily, widget: relation, collection: productfamily, searchFields: [name, twitterHandle], valueField: name}

@@ -2,5 +2,6 @@ baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Support"
+description = "Totally an awesome description"
 
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]

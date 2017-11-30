@@ -1,16 +1,15 @@
 {{ partial "header" . }}
+<noscript>
+  You need to enable JavaScript to enable search.
+</noscript>
 
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
-
-<script>
-  document.addEventListener('DOMContentLoaded', thing, false);
-  function thing() {
-    console.log("woop")
-  }
-</script>
-
-<p>
-  Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!
-</p>
+<h1> Test Support Page </h1>
+<input id="search" type="text">
+<!-- Ranges through content/post/*.md -->
+{{ $counter := 0}}
+{{range $index, $element := .Data.Pages}}
+  <h1> {{$element.Title}} </h1>
+  <div id="{{$index}}"style="display: none;"> {{$element.Content}} </div>
+{{ end }}
 
 {{ partial "footer" . }}
