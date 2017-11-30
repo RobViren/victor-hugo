@@ -38,6 +38,7 @@
     "postcss-cssnext": "^2.7.0",
     "postcss-import": "^10.0.0",
     "url-loader": "^0.5.7",
+    "wade": "^0.3.3",
     "webpack": "3.6.0",
     "whatwg-fetch": "^1.0.0"
   },
