@@ -21,5 +21,6 @@ collections:
       - label: "Attachments"
         name: "attachments"
         widget: list
+        required: false
         fields:
           - {label: "Attachments", name: "attachments", widget: file, required: false}

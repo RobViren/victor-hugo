@@ -6,10 +6,18 @@
 <h1> Test Support Page </h1>
 <input id="search" type="text">
 <!-- Ranges through content/post/*.md -->
-{{ $counter := 0}}
+
+{{ $.Scratch.Set "family" "blank"}}
 {{range $index, $element := .Data.Pages}}
-  <h1> {{$element.Title}} </h1>
+  {{ if eq ($.Scratch.Get "family") $element.Params.productfamily }}
+  <div> {{$element.Title}} </div>
   <div id="{{$index}}"style="display: none;"> {{$element.Content}} </div>
+  {{ else }}
+  {{$.Scratch.Set "family" $element.Params.productfamily}}
+  <h1> {{$element.Params.productfamily}} </h2>
+  <div> {{$element.Title}} </div>
+  <div id="{{$index}}"style="display: none;"> {{$element.Content}} </div>
+  {{ end }}
 {{ end }}
 
 {{ partial "footer" . }}
