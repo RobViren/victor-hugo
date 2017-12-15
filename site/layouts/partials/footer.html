@@ -2,7 +2,7 @@
   <script>
   console.log(window.netlifyIdentity)
   if (window.netlifyIdentity) {
-    console.log(window.netlifyIdentity)
+    console.log(window.netlifyIdentity.currentUser())
     /*
     window.netlifyIdentity.on("init", user => {
       if (!user) {
