@@ -1,6 +1,9 @@
   <script async src="app.js"></script>
   <script>
+  console.log(window.netlifyIdentity)
   if (window.netlifyIdentity) {
+    console.log(window.netlifyIdentity)
+    /*
     window.netlifyIdentity.on("init", user => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
@@ -8,6 +11,7 @@
         });
       }
     });
+    */
   }
 </script>
   </body>
