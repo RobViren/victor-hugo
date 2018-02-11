@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: local
 
 public_folder: "site/static"
 media_folder: "site/content/assets"
@@ -22,3 +22,14 @@ collections:
         required: false
         fields:
           - {label: "Attachments", name: "attachments", widget: file, required: false}
+  - name: "landing"
+    label: "Landing"
+    folder: "site/content/landing"
+    create: true
+    sort: "order:desc"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "left", widget: "select", options: ["left","right"]}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Order",name: "order", widget: "number"}

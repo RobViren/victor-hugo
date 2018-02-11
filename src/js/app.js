@@ -1,25 +1,14 @@
-import Wade from "wade";
+//Navbar items
+var toggled = false;
+var burger = document.getElementById("burger");
+var navbar = document.getElementById("navMenuColorinfo-example")
 
-var i = 0;
-var productText = [];
-
-function getNode() {
-  var element = document.getElementById(i.toString());
-  if (element) {
-    productText.push(element.innerHTML.replace(/<\/?[^>]+(>|$)/g, ""));
+burger.onclick = function () {
+  if(toggled === false){
+    toggled = true;
+    navbar.className = "navbar-menu is-active"
+  } else {
+    toggled = false;
+    navbar.className = "navbar-menu"
   }
-  i++;
-  return (element);
 }
-
-
-while (getNode()) {
-
-}
-
-const search = Wade(productText);
-
-var elm = document.getElementById("search");
-elm.addEventListener("keyup", (e) => {
-  console.log(search(e.target.value));
-});

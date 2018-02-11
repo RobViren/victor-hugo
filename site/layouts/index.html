@@ -1,13 +1,10 @@
 {{ partial "header" . }}
-<noscript>
-  You need to enable JavaScript to enable search.
-</noscript>
-
+{{ partial "navbar" . }}
 <h1> Test Support Page </h1>
 <input id="search" type="text">
 <!-- Ranges through content/post/*.md -->
 
-{{ $.Scratch.Set "family" "blank"}}
+<!-- {{ $.Scratch.Set "family" "blank"}}
 {{range $index, $element := .Data.Pages}}
   {{ if eq ($.Scratch.Get "family") $element.Params.productfamily }}
   <div> {{$element.Title}} </div>
@@ -18,6 +15,15 @@
   <div> {{$element.Title}} </div>
   <div id="{{$index}}"style="display: none;"> {{$element.Content}} </div>
   {{ end }}
+{{ end }} -->
+
+
+{{range (.Data.Pages.ByParam "order")}}
+    {{if gt .Params.Order 0}}
+      <div> {{.Title}} </div>
+      <div id="{{.Params.Order}}"style="display: none;"> {{.Content}} </div>
+      <img src="{{.Params.Image}}" width="{{.Params.Width}}" height="{{.Params.Height}}"></img>
+    {{ end }}
 {{ end }}
 
 {{ partial "footer" . }}
